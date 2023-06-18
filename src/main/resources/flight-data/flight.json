@@ -1,0 +1,37 @@
+[
+  {
+    "flightId": 0,
+    "flightNumber": 7539,
+    "departureAirportIATACode": "LAX",
+    "arrivalAirportIATACode": "GDN",
+    "departureDate": "2019-02-19T05:40:20-01:00"
+  },
+  {
+    "flightId": 1,
+    "flightNumber": 8663,
+    "departureAirportIATACode": "YYT",
+    "arrivalAirportIATACode": "LEW",
+    "departureDate": "2017-08-21T09:37:04-02:00"
+  },
+  {
+    "flightId": 2,
+    "flightNumber": 4928,
+    "departureAirportIATACode": "SEA",
+    "arrivalAirportIATACode": "PPX",
+    "departureDate": "2016-07-03T11:52:56-02:00"
+  },
+  {
+    "flightId": 3,
+    "flightNumber": 3240,
+    "departureAirportIATACode": "YYZ",
+    "arrivalAirportIATACode": "GDN",
+    "departureDate": "2017-01-27T02:06:54-01:00"
+  },
+  {
+    "flightId": 4,
+    "flightNumber": 2267,
+    "departureAirportIATACode": "LAX",
+    "arrivalAirportIATACode": "GDN",
+    "departureDate": "2022-09-05T10:05:48-02:00"
+  }
+]

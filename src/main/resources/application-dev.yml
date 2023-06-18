@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: 'jdbc:h2:mem:appDb;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS smart'
+    username: sa
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: false
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    drop-first: true
+    contexts: none
+
+logging:
+  level:
+    org:
+      springframework:
+        web: INFO
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+          nodeValue: TRACE
+        SQL: DEBUG
+    com:
+      ricardocreates: TRACE
+    root: WARN

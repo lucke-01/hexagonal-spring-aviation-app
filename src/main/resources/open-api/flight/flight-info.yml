@@ -1,0 +1,105 @@
+paths:
+  /flight-info:
+    get:
+      tags:
+        - flight-controller
+      summary: getFlightInfo
+      operationId: getFlightInfo
+      parameters:
+        - name: flightNumber
+          in: query
+          description: flight number
+          required: true
+          schema:
+            type: integer
+            example: 7539
+        - name: flightDate
+          in: query
+          description: flight date
+          required: true
+          schema:
+            type: string
+            format: date-time
+            example: "2019-02-19T05:40:20-01:00"
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/FlightInfoDto"
+        '401':
+          description: Bad Parameter
+          content:
+            application/json:
+              schema:
+                "$ref": "../smart-aviation-api.yml#/components/schemas/GenericErrorResponseDto"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                "$ref": "../smart-aviation-api.yml#/components/schemas/GenericErrorResponseDto"
+  /flight-info/iata:
+    get:
+      tags:
+        - flight-controller
+      summary: getFlightInfoIata
+      operationId: getFlightInfoIata
+      parameters:
+        - name: iataCode
+          in: query
+          description: iata number
+          required: true
+          schema:
+            type: string
+        - name: flightDate
+          in: query
+          description: flight date
+          required: true
+          schema:
+            type: string
+            format: date-time
+            example: "2019-02-19T05:40:20-01:00"
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/FlightIataInfoDto"
+        '401':
+          description: Bad Parameter
+          content:
+            application/json:
+              schema:
+                "$ref": "../smart-aviation-api.yml#/components/schemas/GenericErrorResponseDto"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                "$ref": "../smart-aviation-api.yml#/components/schemas/GenericErrorResponseDto"
+components:
+  schemas:
+    FlightInfoDto:
+      type: object
+      properties:
+        cargoWeight:
+          type: number
+          description: In KG
+        baggageWeight:
+          type: number
+          description: In KG
+        totalWeight:
+          type: number
+          description: In KG
+    FlightIataInfoDto:
+      type: object
+      properties:
+        numberFlightDeparting:
+          type: integer
+        numberFlightArriving:
+          type: integer
+        totalPiecesBaggageDeparting:
+          type: integer
+        totalPiecesBaggageArriving:
+          type: integer
